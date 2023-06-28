@@ -1,6 +1,6 @@
 # Extend OAuth login for phpBB
 
-![Example of login](docs/assets/example.png)
+![Example of login](docs/example.png)
 
 The intention of this extension is to extend the list of Phpbb OAuth providers.
 

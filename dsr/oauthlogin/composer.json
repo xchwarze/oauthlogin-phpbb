@@ -1,0 +1,31 @@
+{
+  "name": "dsr/oauthlogin",
+  "type": "phpbb-extension",
+  "description": "Extend OAuth login",
+  "version": "1.0.0",
+  "time": "2023-06-27",
+  "keywords": [],
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "DSR!",
+      "role": "Author"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "extra": {
+    "display-name": "Extend OAuth login",
+    "soft-require": {
+      "phpbb/phpbb": ">=3.3.0"
+    }
+  },
+  "autoload": {
+    "files": [
+      "oauth/oauth2/service/DiscordExtend.php",
+      "oauth/oauth2/service/GitHubExtend.php"
+    ]
+  }
+}

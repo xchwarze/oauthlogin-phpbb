@@ -1,0 +1,31 @@
+services:
+  auth.provider.oauth.service.discord:
+    class: dsr\oauthlogin\auth\provider\oauth\service\discord
+    arguments:
+      - '@config'
+      - '@request'
+    tags:
+      - { name: auth.provider.oauth.service }
+
+  auth.provider.oauth.service.github:
+    class: dsr\oauthlogin\auth\provider\oauth\service\github
+    arguments:
+      - '@config'
+      - '@request'
+    tags:
+      - { name: auth.provider.oauth.service }
+
+  auth.provider.oauth.service.microsoft:
+    class: dsr\oauthlogin\auth\provider\oauth\service\microsoft
+    arguments:
+      - '@config'
+      - '@request'
+    tags:
+      - { name: auth.provider.oauth.service }
+
+  dsr.oauthlogin.listener:
+    class: dsr\oauthlogin\event\listener
+    arguments:
+      - '@language'
+    tags:
+      - { name: event.listener }

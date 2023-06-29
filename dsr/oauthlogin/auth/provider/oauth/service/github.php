@@ -11,7 +11,7 @@
 namespace dsr\oauthlogin\auth\provider\oauth\service;
 
 use OAuth\Common\Http\Exception\TokenResponseException;
-use OAuth\OAuth2\Service\GitHubExtend;
+use OAuth\OAuth2\Service\GitHubExtend as GitHubService;
 use phpbb\auth\provider\oauth\service\base;
 use phpbb\auth\provider\oauth\service\exception;
 use phpbb\config\config;
@@ -61,7 +61,7 @@ class github extends base
      */
     public function perform_auth_login()
     {
-        if (!($this->service_provider instanceof GitHubExtend)) {
+        if (!($this->service_provider instanceof GitHubService)) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_INVALID_SERVICE_TYPE');
         }
 
@@ -88,7 +88,7 @@ class github extends base
      */
     public function perform_token_auth()
     {
-        if (!($this->service_provider instanceof GitHubExtend)) {
+        if (!($this->service_provider instanceof GitHubService)) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_INVALID_SERVICE_TYPE');
         }
 

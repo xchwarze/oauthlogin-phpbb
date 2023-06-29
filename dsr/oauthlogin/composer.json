@@ -2,14 +2,15 @@
   "name": "dsr/oauthlogin",
   "type": "phpbb-extension",
   "description": "Extend OAuth login",
-  "version": "1.0.0",
-  "time": "2023-06-27",
-  "keywords": [],
+  "version": "1.1.0",
+  "homepage": "https://github.com/xchwarze",
+  "time": "2023-06-29",
   "license": "GPL-2.0-only",
   "authors": [
     {
       "name": "DSR!",
-      "role": "Author"
+      "role": "Author",
+      "homepage": "https://github.com/xchwarze"
     }
   ],
   "minimum-stability": "stable",
@@ -25,7 +26,8 @@
   "autoload": {
     "files": [
       "oauth/oauth2/service/DiscordExtend.php",
-      "oauth/oauth2/service/GitHubExtend.php"
+      "oauth/oauth2/service/GitHubExtend.php",
+      "oauth/oauth2/service/WordpressExtend.php"
     ]
   }
 }

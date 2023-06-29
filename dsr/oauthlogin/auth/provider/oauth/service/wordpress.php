@@ -11,13 +11,13 @@
 namespace dsr\oauthlogin\auth\provider\oauth\service;
 
 use OAuth\Common\Http\Exception\TokenResponseException;
-use OAuth\OAuth2\Service\DiscordExtend as DiscordService;
+use OAuth\OAuth2\Service\WordpressExtend as WordpressService;
 use phpbb\auth\provider\oauth\service\base;
 use phpbb\auth\provider\oauth\service\exception;
 use phpbb\config\config;
 use phpbb\request\request_interface;
 
-class discord extends base
+class wordpress extends base
 {
     /** @var config */
     protected $config;
@@ -43,7 +43,7 @@ class discord extends base
     public function get_auth_scope()
     {
         return [
-            'identify',
+            'auth',
         ];
     }
 
@@ -52,7 +52,7 @@ class discord extends base
      */
     public function get_external_service_class()
     {
-        return 'DiscordExtend';
+        return 'WordpressExtend';
     }
 
     /**
@@ -61,8 +61,8 @@ class discord extends base
     public function get_service_credentials()
     {
         return [
-            'key' => $this->config['auth_oauth_discord_key'],
-            'secret' => $this->config['auth_oauth_discord_secret'],
+            'key' => $this->config['auth_oauth_wordpress_key'],
+            'secret' => $this->config['auth_oauth_wordpress_secret'],
         ];
     }
 
@@ -71,7 +71,7 @@ class discord extends base
      */
     public function perform_auth_login()
     {
-        if (!($this->service_provider instanceof DiscordService)) {
+        if (!($this->service_provider instanceof WordpressService)) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_INVALID_SERVICE_TYPE');
         }
 
@@ -84,13 +84,13 @@ class discord extends base
 
         try {
             // Send a request with it
-            $result = (array)json_decode($this->service_provider->request('/users/@me'), true);
+            $result = (array)json_decode($this->service_provider->request('me'), true);
         } catch (\OAuth\Common\Exception\Exception $e) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_REQUEST');
         }
 
         // Return the unique identifier
-        return $result['id'];
+        return $result['ID'];
     }
 
     /**
@@ -98,18 +98,18 @@ class discord extends base
      */
     public function perform_token_auth()
     {
-        if (!($this->service_provider instanceof DiscordService)) {
+        if (!($this->service_provider instanceof WordpressService)) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_INVALID_SERVICE_TYPE');
         }
 
         try {
             // Send a request with it
-            $result = (array)json_decode($this->service_provider->request('/users/@me'), true);
+            $result = (array)json_decode($this->service_provider->request('me'), true);
         } catch (\OAuth\Common\Exception\Exception $e) {
             throw new exception('AUTH_PROVIDER_OAUTH_ERROR_REQUEST');
         }
 
         // Return the unique identifier
-        return $result['id'];
+        return $result['ID'];
     }
 }

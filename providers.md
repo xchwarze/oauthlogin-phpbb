@@ -54,3 +54,28 @@ Remember to replace `http://www.example.com/board` with your Board's URL!
    Complete the form by choosing the maximum validity period.
 
    Then you have to copy the **Value**; this will be your **Client Secret**, and the **Client ID** can be read from the general information.
+
+
+### Reddit
+
+1. Go to the [Reddit apps](https://ssl.reddit.com/prefs/apps) and click on the are you a developer? and press "create an app..."" button.
+
+2. Setup OAuth2 Redirects:
+Reddit only support **one** redirect.
+```
+    https://www.example.com/board/ucp.php?mode=login&login=external&oauth_service=reddit
+```
+
+3. Copy and save the `Client ID` (web app) and `Client Secret` (secret)
+
+
+### Wordpress
+
+1. Go to the [applications manager](https://developer.wordpress.com/apps/) and press "Create New Application" button.
+
+2. Setup OAuth2 Redirects:
+```
+    https://www.example.com/board/ucp.php
+```
+
+3. Copy and save the `Client ID` and `Client Secret`

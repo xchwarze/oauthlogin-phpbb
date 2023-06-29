@@ -4,11 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0fa2cbce0dc215ea4b72f15b680067e4
+class ComposerStaticInit715d800bc7ae6a952cc41365d745042d
 {
     public static $files = array (
         '87c83f3e9bcb828d13769f82bfcff850' => __DIR__ . '/../..' . '/oauth/oauth2/service/DiscordExtend.php',
         '21eae3be3a721cd434d6614a581716ab' => __DIR__ . '/../..' . '/oauth/oauth2/service/GitHubExtend.php',
+        'ea98e2d13cdfc6ffb7faa0ac497fb920' => __DIR__ . '/../..' . '/oauth/oauth2/service/WordpressExtend.php',
     );
 
     public static $classMap = array (
@@ -18,7 +19,7 @@ class ComposerStaticInit0fa2cbce0dc215ea4b72f15b680067e4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit0fa2cbce0dc215ea4b72f15b680067e4::$classMap;
+            $loader->classMap = ComposerStaticInit715d800bc7ae6a952cc41365d745042d::$classMap;
 
         }, null, ClassLoader::class);
     }

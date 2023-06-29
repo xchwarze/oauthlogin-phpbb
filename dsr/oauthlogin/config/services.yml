@@ -23,6 +23,22 @@ services:
     tags:
       - { name: auth.provider.oauth.service }
 
+  auth.provider.oauth.service.reddit:
+    class: dsr\oauthlogin\auth\provider\oauth\service\reddit
+    arguments:
+      - '@config'
+      - '@request'
+    tags:
+      - { name: auth.provider.oauth.service }
+
+  auth.provider.oauth.service.wordpress:
+    class: dsr\oauthlogin\auth\provider\oauth\service\wordpress
+    arguments:
+      - '@config'
+      - '@request'
+    tags:
+      - { name: auth.provider.oauth.service }
+
   dsr.oauthlogin.listener:
     class: dsr\oauthlogin\event\listener
     arguments:

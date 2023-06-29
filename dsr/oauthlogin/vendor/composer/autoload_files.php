@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     '87c83f3e9bcb828d13769f82bfcff850' => $baseDir . '/oauth/oauth2/service/DiscordExtend.php',
     '21eae3be3a721cd434d6614a581716ab' => $baseDir . '/oauth/oauth2/service/GitHubExtend.php',
+    'ea98e2d13cdfc6ffb7faa0ac497fb920' => $baseDir . '/oauth/oauth2/service/WordpressExtend.php',
 );

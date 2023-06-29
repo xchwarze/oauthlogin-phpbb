@@ -40,18 +40,24 @@ class remove_oauth_data extends container_aware_migration
                 'auth.provider.oauth.service.discord',
                 'auth.provider.oauth.service.github',
                 'auth.provider.oauth.service.microsoft',
+                'auth.provider.oauth.service.reddit',
+                'auth.provider.oauth.service.wordpress',
             ],
 
             $states => [
                 'auth.provider.oauth.service.discord',
                 'auth.provider.oauth.service.github',
                 'auth.provider.oauth.service.microsoft',
+                'auth.provider.oauth.service.reddit',
+                'auth.provider.oauth.service.wordpress',
             ],
 
             $accounts => [
                 'discord',
                 'github',
                 'microsoft',
+                'reddit',
+                'wordpress',
             ],
         ];
 

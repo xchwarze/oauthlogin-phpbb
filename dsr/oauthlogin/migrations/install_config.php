@@ -39,6 +39,14 @@ class install_config extends migration
             // microsoft
             ['config.add', ['auth_oauth_microsoft_key', '']],
             ['config.add', ['auth_oauth_microsoft_secret', '']],
+
+            // reddit
+            ['config.add', ['auth_oauth_reddit_key', '']],
+            ['config.add', ['auth_oauth_reddit_secret', '']],
+
+            // wordpress
+            ['config.add', ['auth_oauth_wordpress_key', '']],
+            ['config.add', ['auth_oauth_wordpress_secret', '']],
         ];
     }
 

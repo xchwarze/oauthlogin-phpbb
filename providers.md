@@ -33,6 +33,7 @@ Remember to replace `http://www.example.com/board` with your Board's URL!
    If you don't configure the url with all the parameters you will get this error: "Invalid OAuth2 redirect_uri"
 ```
     https://www.example.com/board/ucp.php?mode=login&login=external&oauth_service=discord
+    https://www.example.com/board/ucp.php?mode=login_link&login_link_oauth_service=discord
     https://www.example.com/board/ucp.php?i=ucp_auth_link&mode=auth_link&link=1&oauth_service=discord
 ```
 
@@ -61,7 +62,7 @@ Remember to replace `http://www.example.com/board` with your Board's URL!
 1. Go to the [Reddit apps](https://ssl.reddit.com/prefs/apps) and click on the are you a developer? and press "create an app..."" button.
 
 2. Setup OAuth2 Redirects:
-Reddit only support **one** redirect.
+Reddit only support **one** redirect. So we add only the main one.
 ```
     https://www.example.com/board/ucp.php?mode=login&login=external&oauth_service=reddit
 ```

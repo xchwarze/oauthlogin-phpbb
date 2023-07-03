@@ -44,7 +44,6 @@ class reddit extends base
     {
         return [
             'identity',
-            'read',
         ];
     }
 
